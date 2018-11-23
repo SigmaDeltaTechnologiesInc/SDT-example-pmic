@@ -49,13 +49,14 @@ int main(void) {
 
     // Turn off Low-Dropout Linear Regulator (LDO); unused on MAX32620FTHR platform
     max77650.disableLDO();
+    max77650.setEN_LDO(0x04);   // Disable
+    // max77650.setEN_LDO(0x06);   // Enable
+    int enLDO = max77650.getEN_LDO();
+    serial_pc.printf("EN_LDO = 0x%x\n", enLDO);
     
-    // Set SIMO Buck-Boost Regulator 2 target voltage; provides VDDIOH
-    max77650.setSBB2Voltage(3.3f);
-
     // Configure PMIC LED's to cycle between colors
-    int cid = max77650.cid();
-    serial_pc.printf("CID = %d\n", cid);
+    int chipID = max77650.getChipID();
+    serial_pc.printf("CID = 0x%x\n", chipID);
 
     while(true) {
         serial_pc.printf("LED Toggle\n");

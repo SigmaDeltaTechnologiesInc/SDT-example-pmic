@@ -3,6 +3,8 @@ BUILD
 BUILD/*
 mbed-os
 mbed-os/*
+source/MAX77650
+source/MAX77650/*
 
 # File type
 *.mbed
