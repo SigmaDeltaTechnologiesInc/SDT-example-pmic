@@ -48,7 +48,6 @@ int main(void) {
     serial_pc.printf("< Sigma Delta Technologies Inc. >\n\r");
 
     // Turn off Low-Dropout Linear Regulator (LDO); unused on MAX32620FTHR platform
-    max77650.disableLDO();
     max77650.setEN_LDO(0x04);   // Disable
     // max77650.setEN_LDO(0x06);   // Enable
     int enLDO = max77650.getEN_LDO();
