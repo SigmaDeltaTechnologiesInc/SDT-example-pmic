@@ -3,6 +3,7 @@ BUILD
 BUILD/*
 mbed-os
 mbed-os/*
+source/*
 
 # File type
 *.mbed
