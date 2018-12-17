@@ -57,6 +57,12 @@ int main(void) {
     int chipID = max77650.getChipID();
     serial_pc.printf("CID = 0x%x\n", chipID);
 
+    int ipSbb2 = max77650.getIP_SBB2();
+    serial_pc.printf("IP_SBB2 = 0x%x\n", ipSbb2);
+    max77650.setIP_SBB2(0x00);
+    ipSbb2 = max77650.getIP_SBB2();
+    serial_pc.printf("IP_SBB2 = 0x%x\n", ipSbb2);
+
     while(true) {
         serial_pc.printf("LED Toggle\n");
         do_ledBlue = !do_ledBlue;
